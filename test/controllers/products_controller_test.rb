@@ -17,9 +17,9 @@ class ProductsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:products)
 
     assert_select '#main h1', 'Listing products'
-    assert_select '#main img.list_image', 3
-    assert_select '#main .list_description dt', 3
-    assert_select '#main .list_description dd', 3
+    assert_select '#main img.list_image', 5
+    assert_select '#main .list_description dt', 5
+    assert_select '#main .list_description dd', 5
   end
 
   test "should get new" do

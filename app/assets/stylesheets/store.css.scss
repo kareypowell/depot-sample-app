@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* START_HIGHLIGHT */
+$lightGray: #999;
+
 .store {
   h1 {
     margin: 0;
@@ -24,6 +26,10 @@
       margin-right: 5px;
       margin-bottom: 5px;
       position: absolute;
+      border: 1px solid #4d4d4d;
+      -webkit-box-shadow: 3px 3px $lightGray;
+      -moz-box-shadow: 3px 3px $lightGray;
+      box-shadow: 3px 3px $lightGray;
     }
 
     h3 {
@@ -35,11 +41,19 @@
       color: #227;
     }
 
+//#START:inline
     p, div.price_line {
       margin-left: 100px;
       margin-top: 0.5em; 
       margin-bottom: 0.8em; 
+
+      /* START_HIGHLIGHT */
+      form, div {
+        display: inline;
+      }
+      /* END_HIGHLIGHT */
     }
+//#END:inline
 
     .price {
       color: #44a;
