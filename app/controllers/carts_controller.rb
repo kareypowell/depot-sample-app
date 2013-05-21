@@ -11,18 +11,6 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    if @cart.line_items.count.zero?
-      respond_to do |format|
-        format.html { redirect_to(store_url,
-          :notice => 'Your cart is currently empty') }
-        format.xml  { head :ok }
-      end
-    else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @cart }
-      end
-    end
   end
 
   # GET /carts/new

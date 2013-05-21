@@ -61,14 +61,22 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.json
   def destroy
     @line_item = LineItem.find(params[:id])
+    @current_cart = Cart.find(session[:cart_id])
+
     if @line_item.quantity > 1
       @line_item.update_attributes(quantity: @line_item.quantity - 1)
     else
       @line_item.destroy
     end
+
     respond_to do |format|
-      format.html { redirect_to(cart_url(session[:cart_id])) }
-      format.json { head :no_content }
+      if @current_cart.line_items.count.zero?
+        format.html { redirect_to store_url, notice: "Your cart is currently empty" }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to cart_url(session[:cart_id]), notice: "Item removed" }
+        format.json { head :no_content }
+      end
     end
   end
 
