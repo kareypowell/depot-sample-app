@@ -10,5 +10,5 @@
 	</table>
 
 	<%= button_to 'Empty cart', cart, method: :delete,
-	    data: { confirm: 'You will loose all the items in your cart. Are you sure?' } %>
+	    data: { confirm: 'You will loose all the items in your cart. Are you sure?' }, remote: true %>
 <% end %>
