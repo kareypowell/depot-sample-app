@@ -1,0 +1,9 @@
+<h1>Who bought: <small style="font-weight:normal;"><%= @product.title %></small></h1>
+
+<p>
+	<ul>
+		<% @product.orders.each do |order| %>
+			<li><%= order.name %> - payment type: <%= order.pay_type %></li>
+		<% end %>
+	</ul>
+</p>
