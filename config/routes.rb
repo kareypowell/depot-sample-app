@@ -1,5 +1,7 @@
 Depot::Application.routes.draw do
   
+  resources :payment_types
+
   resources :orders
 
   resources :line_items do

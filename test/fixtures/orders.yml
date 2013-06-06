@@ -4,10 +4,10 @@ one:
   name: Dave Thomas
   address: MyText
   email: dave@example.org
-  pay_type: Check
+  payment_type_id: 1
 
 two:
   name: Karey Powell
   address: MyText
   email: karey@example.com
-  pay_type: Credit Card
+  payment_type_id: 2
